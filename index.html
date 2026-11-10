@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Gideon Kappi, known as Lord Ghost — Cybersecurity and Computer Science student, web developer and automation developer.">
+<meta name="theme-color" content="#070b10">
+<title>LORD GHOST | Gideon Kappi</title>
+
+<style>
+:root {
+--bg:#070b10;
+--panel:#101923;
+--text:#edf4f7;
+--muted:#a4b2bd;
+--accent:#67e4d1;
+--accent2:#a3fff0;
+--line:rgba(103,228,209,.2);
+--max:1160px;
+}
+
+* {
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+html {
+scroll-behavior:smooth;
+}
+
+body {
+color:var(--text);
+background:
+radial-gradient(ellipse at 78% 12%,rgba(22,100,105,.18),transparent 35%),
+radial-gradient(ellipse at 10% 60%,rgba(34,61,85,.14),transparent 38%),
+var(--bg);
+font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+line-height:1.65;
+overflow-x:hidden;
+}
+
+a {
+color:inherit;
+text-decoration:none;
+}
+
+.wrap {
+width:min(var(--max),90%);
+margin:auto;
+}
+
+header {
+height:82px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+border-bottom:1px solid var(--line);
+}
+
+.brand {
+font-size:.95rem;
+font-weight:900;
+letter-spacing:2.5px;
+}
+
+.brand span {
+color:var(--accent);
+}
+
+nav {
+display:flex;
+gap:28px;
+color:var(--muted);
+font-size:.9rem;
+}
+
+nav a:hover {
+color:var(--accent);
+}
+
+.hero {
+min-height:680px;
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+gap:20px;
+padding:65px 0 75px;
+}
+
+.kicker {
+color:var(--accent);
+font-size:.72rem;
+font-weight:800;
+letter-spacing:3px;
+text-transform:uppercase;
+}
+
+h1 {
+font-size:clamp(3.1rem,7vw,6.2rem);
+line-height:.98;
+letter-spacing:-4px;
+margin:22px 0;
+}
+
+h1 span {
+color:var(--accent);
+}
+
+.lead {
+max-width:600px;
+color:var(--muted);
+font-size:1.06rem;
+}
+
+.actions {
+display:flex;
+gap:13px;
+flex-wrap:wrap;
+margin-top:28px;
+}
+
+.btn {
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:12px 19px;
+border-radius:6px;
+font-size:.9rem;
+font-weight:800;
+transition:.2s;
+}
+
+.btn:hover {
+transform:translateY(-3px);
+}
+
+.btn-main {
+background:var(--accent);
+color:#071311;
+}
+
+.btn-outline {
+border:1px solid var(--line);
+color:var(--text);
+}
+
+/* ORIGINAL TECHNOLOGY SPHERE */
+
+.visual {
+height:490px;
+position:relative;
+display:grid;
+place-items:center;
+perspective:1000px;
+isolation:isolate;
+}
+
+.visual:before {
+content:"";
+position:absolute;
+width:350px;
+height:350px;
+border-radius:50%;
+background:rgba(65,220,205,.13);
+filter:blur(65px);
+}
+
+.orb-scene {
+width:min(76vw,390px);
+aspect-ratio:1;
+position:relative;
+transform-style:preserve-3d;
+animation:float 8s ease-in-out infinite;
+}
+
+.orb-shell {
+position:absolute;
+inset:8%;
+border-radius:50%;
+overflow:hidden;
+transform-style:preserve-3d;
+
+background:
+radial-gradient(
+circle at 34% 27%,
+#b7fff4 0%,
+#63d9d0 7%,
+#267f88 23%,
+#10414e 48%,
+#081923 74%,
+#050c14 100%
+);
+
+box-shadow:
+inset -30px -24px 50px rgba(0,0,0,.7),
+inset 12px 10px 26px rgba(255,255,255,.2),
+0 0 0 1px rgba(144,255,242,.35),
+0 0 55px rgba(69,225,209,.22);
+}
+
+.orb-shell:before {
+content:"";
+position:absolute;
+inset:0;
+border-radius:50%;
+background:
+radial-gradient(ellipse at 28% 28%,rgba(255,255,255,.22),transparent 23%),
+linear-gradient(115deg,transparent 38%,rgba(0,0,0,.42) 100%);
+}
+
+.inner-tech {
+position:absolute;
+inset:18%;
+border-radius:50%;
+overflow:hidden;
+transform:translateZ(18px);
+opacity:.88;
+}
+
+.circuit {
+position:absolute;
+left:50%;
+top:50%;
+height:1px;
+width:42%;
+transform-origin:left center;
+background:linear-gradient(90deg,rgba(173,255,244,.8),rgba(103,228,209,.06));
+box-shadow:0 0 7px rgba(103,228,209,.7);
+}
+
+.circuit:before,
+.circuit:after {
+content:"";
+position:absolute;
+width:5px;
+height:5px;
+border-radius:50%;
+background:#c5fff7;
+box-shadow:0 0 9px 3px rgba(103,228,209,.8);
+top:-2px;
+}
+
+.circuit:after {
+left:100%;
+width:4px;
+height:4px;
+}
+
+.c1 {transform:rotate(0deg) scaleX(.8)}
+.c2 {transform:rotate(55deg) scaleX(.65)}
+.c3 {transform:rotate(112deg) scaleX(.8)}
+.c4 {transform:rotate(174deg) scaleX(.6)}
+.c5 {transform:rotate(230deg) scaleX(.78)}
+.c6 {transform:rotate(292deg) scaleX(.62)}
+
+.tech-core {
+position:absolute;
+width:18px;
+height:18px;
+left:calc(50% - 9px);
+top:calc(50% - 9px);
+border-radius:50%;
+background:#c5fff7;
+box-shadow:
+0 0 12px 5px rgba(103,228,209,.75),
+0 0 35px 12px rgba(64,213,197,.3);
+animation:corePulse 4s ease-in-out infinite;
+}
+
+.data-node {
+position:absolute;
+width:7px;
+height:7px;
+border:1px solid #b7fff4;
+background:#4ccbbb;
+border-radius:2px;
+box-shadow:0 0 10px rgba(103,228,209,.9);
+animation:nodeDrift 7s ease-in-out infinite alternate;
+}
+
+.n1 {left:22%;top:25%}
+.n2 {right:18%;top:36%;animation-delay:-2s}
+.n3 {left:34%;bottom:17%;animation-delay:-4s}
+.n4 {right:28%;bottom:20%;animation-delay:-1s}
+.n5 {left:13%;top:58%;animation-delay:-3s}
+
+.orbit {
+position:absolute;
+inset:2% -3%;
+border:1px solid rgba(128,248,232,.58);
+border-radius:50%;
+transform:rotateX(68deg) rotateZ(-18deg);
+pointer-events:none;
+}
+
+.orbit.two {
+inset:-3% 10%;
+border-color:rgba(176,226,229,.42);
+transform:rotateY(67deg) rotateZ(23deg);
+}
+
+.orbit.three {
+inset:13% -8%;
+border-style:dashed;
+opacity:.48;
+transform:rotateX(74deg) rotateZ(64deg);
+}
+
+/* CINEMATIC IMPACT EFFECT */
+
+.impact-event {
+position:absolute;
+inset:0;
+z-index:4;
+pointer-events:none;
+overflow:visible;
+}
+
+.impact-object {
+position:absolute;
+left:61%;
+top:2%;
+width:25px;
+height:25px;
+border-radius:50%;
+
+background:
+radial-gradient(
+circle at 32% 28%,
+#eaffff 0 8%,
+#a3fff0 18%,
+#39bcae 48%,
+#123d45 76%
+);
+
+box-shadow:
+0 0 12px 5px rgba(103,228,209,.65),
+0 0 28px 10px rgba(103,228,209,.3);
+
+opacity:0;
+animation:impactFall 14s ease-in infinite;
+}
+
+.impact-trail {
+position:absolute;
+left:50%;
+top:50%;
+width:5px;
+height:58px;
+border-radius:50%;
+background:linear-gradient(to top,rgba(103,228,209,.8),transparent);
+filter:blur(4px);
+transform:translate(-50%,-100%);
+}
+
+.impact-flash {
+position:absolute;
+left:60%;
+top:57%;
+width:24px;
+height:24px;
+border-radius:50%;
+background:#dffffb;
+
+box-shadow:
+0 0 18px 10px rgba(103,228,209,.8),
+0 0 55px 28px rgba(103,228,209,.35);
+
+opacity:0;
+transform:translate(-50%,-50%) scale(.2);
+animation:impactFlash 14s ease-out infinite;
+}
+
+.impact-ring {
+position:absolute;
+left:60%;
+top:57%;
+width:28px;
+height:28px;
+border:2px solid var(--accent2);
+border-radius:50%;
+opacity:0;
+transform:translate(-50%,-50%) scale(.2);
+box-shadow:0 0 16px rgba(103,228,209,.7);
+animation:impactRing 14s ease-out infinite;
+}
+
+.impact-crack {
+position:absolute;
+left:60%;
+top:57%;
+width:100px;
+height:100px;
+opacity:0;
+transform:translate(-50%,-50%) scale(.5);
+animation:impactCrack 14s ease-out infinite;
+}
+
+.impact-crack:before,
+.impact-crack:after {
+content:"";
+position:absolute;
+left:50%;
+top:50%;
+width:2px;
+height:48px;
+background:linear-gradient(var(--accent2),rgba(103,228,209,0));
+transform-origin:top;
+box-shadow:0 0 7px var(--accent);
+}
+
+.impact-crack:before {
+transform:rotate(35deg);
+}
+
+.impact-crack:after {
+transform:rotate(-55deg);
+height:38px;
+}
+
+.impact-label {
+position:absolute;
+left:50%;
+bottom:1%;
+transform:translateX(-50%);
+font-size:.58rem;
+letter-spacing:2px;
+color:var(--accent2);
+white-space:nowrap;
+opacity:0;
+animation:impactLabel 14s ease-in infinite;
+}
+
+.float-tag {
+position:absolute;
+z-index:6;
+padding:10px 14px;
+border:1px solid var(--line);
+border-radius:7px;
+background:rgba(10,23,30,.9);
+color:var(--accent2);
+font-size:.72rem;
+font-weight:800;
+letter-spacing:1.3px;
+box-shadow:0 12px 28px rgba(0,0,0,.25);
+}
+
+.tag-top {
+right:-1%;
+top:15%;
+transform:rotate(5deg);
+}
+
+.tag-bottom {
+left:-4%;
+bottom:16%;
+transform:rotate(-5deg);
+}
+
+/* ANIMATIONS */
+
+@keyframes impactFall {
+0%,39% {
+opacity:0;
+transform:translate(0,0) scale(.7);
+}
+43% {
+opacity:1;
+}
+53% {
+opacity:1;
+transform:translate(-42px,185px) scale(1);
+}
+55%,100% {
+opacity:0;
+transform:translate(-42px,185px) scale(.35);
+}
+}
+
+@keyframes impactFlash {
+0%,52% {
+opacity:0;
+transform:translate(-50%,-50%) scale(.2);
+}
+54% {
+opacity:1;
+transform:translate(-50%,-50%) scale(1.8);
+}
+57%,100% {
+opacity:0;
+transform:translate(-50%,-50%) scale(3.2);
+}
+}
+
+@keyframes impactRing {
+0%,52% {
+opacity:0;
+transform:translate(-50%,-50%) scale(.2);
+}
+54% {opacity:.95}
+64%,100% {
+opacity:0;
+transform:translate(-50%,-50%) scale(4.8);
+}
+}
+
+@keyframes impactCrack {
+0%,54% {
+opacity:0;
+transform:translate(-50%,-50%) scale(.5);
+}
+57% {
+opacity:.9;
+transform:translate(-50%,-50%) scale(1);
+}
+66%,100% {
+opacity:0;
+transform:translate(-50%,-50%) scale(1.25);
+}
+}
+
+@keyframes impactLabel {
+0%,53%,67%,100% {opacity:0}
+58%,64% {opacity:1}
+}
+
+@keyframes float {
+0%,100% {
+transform:translateY(0) rotateX(-4deg) rotateY(7deg);
+}
+50% {
+transform:translateY(-12px) rotateX(4deg) rotateY(-7deg);
+}
+}
+
+@keyframes corePulse {
+0%,100% {
+transform:scale(.8);
+opacity:.75;
+}
+50% {
+transform:scale(1.2);
+opacity:1;
+}
+}
+
+@keyframes nodeDrift {
+from {
+transform:translate3d(-3px,4px,0) scale(.75);
+}
+to {
+transform:translate3d(8px,-9px,20px) scale(1.2);
+}
+}
+
+/* SECTIONS */
+
+section {
+padding:82px 0;
+border-top:1px solid var(--line);
+}
+
+.section-head {
+margin-bottom:26px;
+}
+
+h2 {
+font-size:clamp(2rem,4vw,3rem);
+line-height:1.1;
+letter-spacing:-1px;
+margin-top:9px;
+}
+
+.about {
+max-width:790px;
+color:var(--muted);
+}
+
+.stack {
+display:flex;
+flex-wrap:wrap;
+gap:11px;
+}
+
+.chip {
+padding:10px 15px;
+border:1px solid var(--line);
+background:var(--panel);
+border-radius:5px;
+color:#dce8ec;
+}
+
+.chip small {
+color:var(--accent);
+margin-left:4px;
+}
+
+.grid {
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:16px;
+}
+
+.panel {
+padding:25px;
+border:1px solid var(--line);
+border-radius:9px;
+background:linear-gradient(145deg,rgba(20,34,44,.92),rgba(11,19,26,.95));
+}
+
+.panel h3 {
+color:var(--accent);
+font-size:1.04rem;
+margin-bottom:8px;
+}
+
+.panel p {
+color:var(--muted);
+}
+
+.contact {
+padding:30px;
+border:1px solid var(--line);
+border-radius:9px;
+background:linear-gradient(110deg,rgba(19,51,55,.75),rgba(13,23,31,.95));
+}
+
+.contact-links {
+display:flex;
+gap:14px;
+flex-wrap:wrap;
+margin-top:20px;
+}
+
+.contact-item {
+color:var(--accent2);
+overflow-wrap:anywhere;
+}
+
+footer {
+padding:25px 0;
+border-top:1px solid var(--line);
+color:var(--muted);
+font-size:.85rem;
+}
+
+.foot {
+display:flex;
+justify-content:space-between;
+gap:14px;
+flex-wrap:wrap;
+}
+
+/* MOBILE */
+
+@media(max-width:760px) {
+
+header {
+height:auto;
+padding:20px 0;
+align-items:flex-start;
+flex-direction:column;
+gap:15px;
+}
+
+nav {
+gap:17px;
+flex-wrap:wrap;
+font-size:.82rem;
+}
+
+.hero {
+grid-template-columns:1fr;
+padding:65px 0 55px;
+gap:0;
+}
+
+.visual {
+height:410px;
+margin-top:5px;
+}
+
+.orb-scene {
+width:min(78vw,370px);
+}
+
+.tag-top {
+right:-2%;
+top:13%;
+}
+
+.tag-bottom {
+left:-2%;
+bottom:13%;
+}
+
+section {
+padding:65px 0;
+}
+
+.grid {
+grid-template-columns:1fr;
+}
+
+h1 {
+letter-spacing:-2px;
+}
+
+.impact-object {
+left:62%;
+}
+
+.impact-label {
+bottom:0;
+}
+}
+
+/* ACCESSIBILITY */
+
+@media(prefers-reduced-motion:reduce) {
+
+*,
+*::before,
+*::after {
+animation:none!important;
+scroll-behavior:auto!important;
+transition:none!important;
+}
+
+.impact-object,
+.impact-flash,
+.impact-ring,
+.impact-crack,
+.impact-label {
+display:none;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+<header>
+
+<a class="brand" href="#home">
+LORD <span>GHOST</span>
+</a>
+
+<nav aria-label="Main navigation">
+<a href="#about">About</a>
+<a href="#stack">Tech stack</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero" id="home" style="border:0">
+
+<div>
+
+<p class="kicker">
+Technology · Development · Innovation
+</p>
+
+<h1>
+GIDEON<br>
+<span>KAPPI.</span>
+</h1>
+
+<p class="lead">
+Known as <strong>Lord Ghost</strong> — a Cybersecurity and Computer Science student from Bayelsa, Nigeria. I develop websites and software, and build Telegram and WhatsApp bot automation projects.
+</p>
+
+<div class="actions">
+
+<a class="btn btn-main"
+href="https://t.me/ghost_ishim"
+target="_blank"
+rel="noopener noreferrer">
+Contact my Telegram ↗
+</a>
+
+<a class="btn btn-outline" href="#about">
+Explore my profile
+</a>
+
+</div>
+
+</div>
+
+<!-- TECHNOLOGY SPHERE -->
+
+<div class="visual">
+
+<div class="orb-scene">
+
+<div class="orb-shell">
+
+<div class="inner-tech">
+
+<i class="circuit c1"></i>
+<i class="circuit c2"></i>
+<i class="circuit c3"></i>
+<i class="circuit c4"></i>
+<i class="circuit c5"></i>
+<i class="circuit c6"></i>
+
+<i class="tech-core"></i>
+
+<i class="data-node n1"></i>
+<i class="data-node n2"></i>
+<i class="data-node n3"></i>
+<i class="data-node n4"></i>
+<i class="data-node n5"></i>
+
+</div>
+
+</div>
+
+<!-- IMPACT ANIMATION -->
+
+<div class="impact-event" aria-hidden="true">
+
+<span class="impact-object">
+<i class="impact-trail"></i>
+</span>
+
+<span class="impact-flash"></span>
+
+<span class="impact-ring"></span>
+
+<span class="impact-crack"></span>
+
+<span class="impact-label">
+PLANETARY IMPACT
+</span>
+
+</div>
+
+<div class="orbit"></div>
+<div class="orbit two"></div>
+<div class="orbit three"></div>
+
+</div>
+
+<span class="float-tag tag-top">
+CYBERSECURITY
+</span>
+
+<span class="float-tag tag-bottom">
+BUILD · CREATE · AUTOMATE
+</span>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="section-head">
+
+<p class="kicker">01 / Profile</p>
+
+<h2>More than a name.</h2>
+
+</div>
+
+<p class="about">
+I'm Gideon Kappi, known online as Lord Ghost. I'm from Bayelsa State, Nigeria. I'm a student studying Cybersecurity and Computer Science, with a strong interest in website development, software engineering and practical automation. I keep learning, building and improving through hands-on projects.
+</p>
+
+</section>
+
+<!-- TECHNOLOGIES -->
+
+<section id="stack">
+
+<div class="section-head">
+
+<p class="kicker">02 / Technologies</p>
+
+<h2>My tech stack.</h2>
+
+</div>
+
+<div class="stack">
+
+<span class="chip">C</span>
+<span class="chip">C++</span>
+<span class="chip">C#</span>
+<span class="chip">Python</span>
+<span class="chip">Java</span>
+<span class="chip">JavaScript</span>
+<span class="chip">HTML5</span>
+<span class="chip">CSS3</span>
+<span class="chip">Node.js <small>Runtime</small></span>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<div class="section-head">
+
+<p class="kicker">03 / What I do</p>
+
+<h2>Building useful technology.</h2>
+
+</div>
+
+<div class="grid">
+
+<article class="panel">
+
+<h3>Website Development</h3>
+
+<p>
+Designing and developing responsive websites with clean, accessible interfaces.
+</p>
+
+</article>
+
+<article class="panel">
+
+<h3>Software Development</h3>
+
+<p>
+Exploring programming and creating practical software solutions.
+</p>
+
+</article>
+
+<article class="panel">
+
+<h3>Telegram Bot Automation</h3>
+
+<p>
+Building Telegram bots and automated workflows for useful tasks.
+</p>
+
+</article>
+
+<article class="panel">
+
+<h3>WhatsApp Bot Automation</h3>
+
+<p>
+Developing WhatsApp bot automation using supported platform tools and integrations.
+</p>
+
+</article>
+
+<article class="panel">
+
+<h3>Cybersecurity & Computer Science</h3>
+
+<p>
+Studying computing, defensive security, privacy and responsible system protection.
+</p>
+
+</article>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="section-head">
+
+<p class="kicker">04 / Contact</p>
+
+<h2>Let's build something.</h2>
+
+</div>
+
+<div class="contact">
+
+<p class="about">
+Contact my Telegram or email for any tech collaboration.
+</p>
+
+<div class="contact-links">
+
+<a class="btn btn-main"
+href="https://t.me/ghost_ishim"
+target="_blank"
+rel="noopener noreferrer">
+Telegram ↗
+</a>
+
+<a class="btn btn-outline"
+href="mailto:Lordghost619@gmail.com">
+Email me ↗
+</a>
+
+</div>
+
+<p class="contact-item" style="margin-top:17px">
+Lordghost619@gmail.com
+</p>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<div class="foot">
+
+<span>
+© <span id="year"></span> LORD GHOST
+</span>
+
+<span>
+Designed with purpose. Built to evolve.
+</span>
+
+</div>
+
+</footer>
+
+</div>
+
+<script>
+"use strict";
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
