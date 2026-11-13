@@ -4,18 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Gideon Kappi, known as Lord Ghost — Cybersecurity and Computer Science student, web developer and automation developer.">
-<meta name="theme-color" content="#070b10">
+<meta name="theme-color" content="#03060a">
 <title>LORD GHOST | Gideon Kappi</title>
 
 <style>
 :root {
---bg:#070b10;
---panel:#101923;
+--bg:#03060a;
+--panel:#0a121a;
 --text:#edf4f7;
 --muted:#a4b2bd;
 --accent:#67e4d1;
 --accent2:#a3fff0;
---line:rgba(103,228,209,.2);
+--line:rgba(103,228,209,.16);
 --max:1160px;
 }
 
@@ -32,8 +32,8 @@ scroll-behavior:smooth;
 body {
 color:var(--text);
 background:
-radial-gradient(ellipse at 78% 12%,rgba(22,100,105,.18),transparent 35%),
-radial-gradient(ellipse at 10% 60%,rgba(34,61,85,.14),transparent 38%),
+radial-gradient(ellipse at 78% 8%,rgba(14,78,84,.22),transparent 40%),
+radial-gradient(ellipse at 8% 70%,rgba(20,38,78,.20),transparent 42%),
 var(--bg);
 font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
 line-height:1.65;
@@ -48,10 +48,36 @@ text-decoration:none;
 .wrap {
 width:min(var(--max),90%);
 margin:auto;
+position:relative;
+z-index:1;
+}
+
+/* 3D PARTICLE BACKGROUND */
+
+#bg3d {
+position:fixed;
+inset:0;
+width:100%;
+height:100%;
+z-index:0;
+pointer-events:none;
+display:block;
+}
+
+/* soft dark vignette so text stays readable over the particles */
+.bg-vignette {
+position:fixed;
+inset:0;
+z-index:0;
+pointer-events:none;
+background:
+radial-gradient(ellipse at 50% 45%,transparent 35%,rgba(2,4,7,.55) 100%);
 }
 
 header {
 height:82px;
+backdrop-filter:blur(8px);
+-webkit-backdrop-filter:blur(8px);
 display:flex;
 align-items:center;
 justify-content:space-between;
@@ -438,7 +464,7 @@ z-index:6;
 padding:10px 14px;
 border:1px solid var(--line);
 border-radius:7px;
-background:rgba(10,23,30,.9);
+background:rgba(6,14,20,.88);
 color:var(--accent2);
 font-size:.72rem;
 font-weight:800;
@@ -586,7 +612,7 @@ gap:11px;
 .chip {
 padding:10px 15px;
 border:1px solid var(--line);
-background:var(--panel);
+background:rgba(10,18,26,.78);
 border-radius:5px;
 color:#dce8ec;
 }
@@ -606,7 +632,9 @@ gap:16px;
 padding:25px;
 border:1px solid var(--line);
 border-radius:9px;
-background:linear-gradient(145deg,rgba(20,34,44,.92),rgba(11,19,26,.95));
+background:linear-gradient(145deg,rgba(14,26,36,.80),rgba(6,12,18,.86));
+backdrop-filter:blur(6px);
+-webkit-backdrop-filter:blur(6px);
 }
 
 .panel h3 {
@@ -623,7 +651,9 @@ color:var(--muted);
 padding:30px;
 border:1px solid var(--line);
 border-radius:9px;
-background:linear-gradient(110deg,rgba(19,51,55,.75),rgba(13,23,31,.95));
+background:linear-gradient(110deg,rgba(12,44,48,.70),rgba(6,12,18,.90));
+backdrop-filter:blur(6px);
+-webkit-backdrop-filter:blur(6px);
 }
 
 .contact-links {
@@ -650,6 +680,43 @@ display:flex;
 justify-content:space-between;
 gap:14px;
 flex-wrap:wrap;
+}
+
+/* SECURITY NOTICE */
+
+.notice {
+display:flex;
+gap:14px;
+align-items:flex-start;
+margin-top:24px;
+padding:18px 20px;
+border:1px solid rgba(103,228,209,.32);
+border-left:3px solid var(--accent);
+border-radius:8px;
+background:rgba(6,16,22,.72);
+backdrop-filter:blur(6px);
+-webkit-backdrop-filter:blur(6px);
+}
+
+.notice svg {
+flex:none;
+width:24px;
+height:24px;
+margin-top:2px;
+}
+
+.notice strong {
+display:block;
+color:var(--accent2);
+font-size:.78rem;
+letter-spacing:2px;
+text-transform:uppercase;
+margin-bottom:6px;
+}
+
+.notice p {
+color:var(--muted);
+font-size:.94rem;
 }
 
 /* MOBILE */
@@ -742,6 +809,9 @@ display:none;
 </head>
 
 <body>
+
+<canvas id="bg3d" aria-hidden="true"></canvas>
+<div class="bg-vignette" aria-hidden="true"></div>
 
 <div class="wrap">
 
@@ -1017,6 +1087,22 @@ Email me ↗
 Lordghost619@gmail.com
 </p>
 
+<div class="notice" role="note">
+
+<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+<path d="M12 2.5l2.4 1.7 2.9-.1 1 2.8 2.3 1.8-.9 2.8.9 2.8-2.3 1.8-1 2.8-2.9-.1L12 21.5l-2.4-1.7-2.9.1-1-2.8-2.3-1.8.9-2.8-.9-2.8 2.3-1.8 1-2.8 2.9.1z" fill="#67e4d1"/>
+<path d="M8.3 12.2l2.5 2.5 4.9-5" stroke="#04110f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+<div>
+<strong>Impersonation warning</strong>
+<p>
+Please note that my official Telegram profile always displays a verified badge. If you come across any profile impersonating Lord Ghost without the verified badge, do not share any personal information or sensitive details with it. Report the account to me immediately.
+</p>
+</div>
+
+</div>
+
 </div>
 
 </section>
@@ -1047,7 +1133,49 @@ Designed with purpose. Built to evolve.
 document.getElementById("year").textContent =
 new Date().getFullYear();
 
-</script>
+/* =========================================================
+   3D PARTICLE BACKGROUND  (plain WebGL, no libraries)
+   Edit the CONFIG block below to tweak the look.
+   ========================================================= */
+(function () {
+  var canvas = document.getElementById("bg3d");
+  if (!canvas) return;
 
-</body>
-</html>
+  var gl = canvas.getContext("webgl", { alpha: true, antialias: false });
+  if (!gl) return; /* no WebGL -> page just shows the dark gradient */
+
+  var isMobile = Math.min(window.innerWidth, window.innerHeight) < 700;
+
+  var CONFIG = {
+    count: isMobile ? 7000 : 15000,   /* number of particles            */
+    speed: 0.035,                     /* auto-rotation speed            */
+    pointer: 0.35,                    /* how much it follows touch/mouse*/
+    scroll: 0,                        /* (old scroll tilt, now off)     */
+    flowDirection: 1,                 /* 1 = stars move the SAME way you scroll, -1 = opposite */
+    flowCruise: 0.7,                  /* constant drift speed after you scroll */
+    flowBoost: 0.0035,                /* extra speed while you scroll fast     */
+    flowMaxBoost: 7,                  /* cap for that extra speed              */
+    size: 1.7,                        /* overall particle size          */
+    brightness: 2.4,                  /* overall glow                   */
+    /* particle colours (r,g,b 0-1) and how often each one appears */
+    palette: [
+      { c: [0.10, 0.50, 0.52], w: 0.50 },  /* deep teal   */
+      { c: [0.40, 0.89, 0.82], w: 0.30 },  /* your accent */
+      { c: [0.78, 1.00, 0.97], w: 0.08 },  /* bright star */
+      { c: [0.22, 0.38, 0.86], w: 0.12 }   /* deep blue   */
+    ]
+  };
+
+  /* ---------- shaders ---------- */
+  var VERT = [
+    "attribute vec3 aPos; attribute vec3 aCol; attribute vec2 aRnd;",
+    "uniform mat4 uP, uVM; uniform float uTime, uPx, uBright, uSize, uFlow;",
+    "varying vec3 vCol; varying float vA;",
+    "void main(){",
+    "  vec4 v = uVM * vec4(aPos,1.0);",
+    "  float R = 13.0;",
+    "  v.y = mod(v.y + uFlow + R, 2.0*R) - R;",
+    "  float edge = 1.0 - smoothstep(R-3.0, R, abs(v.y));",
+    "  vec4 p = uP * v;",
+    "  gl
+
